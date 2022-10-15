@@ -29,4 +29,8 @@ public class BiofitusHomePage {
     public static String readConfirmationMessageAfterSuccessfulLogin() {
         return Common.getElementText(Locators.Biofitus.PersonalInfoPage.headerTextAfterSuccessfulLogin);
     }
+
+    public static String readConfirmationMessageAfterInvalidLogin() {
+        return Common.getElementText(Locators.Biofitus.LogInPage.listUserNotFound);
+    }
 }

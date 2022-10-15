@@ -39,5 +39,25 @@ public class BiofitusHomePageTest extends TestBase {
         Assert.assertEquals(actualMessage, expectedMessage);
 
     }
+
+    @Test
+    private void testLoginWithInvalidData() {
+        String userEmail = "abcd@efg.com";
+        String userPassword = "6an2LeZ(m*4j8C5B";
+        String expectedMessage = "Neteisingi prisijungimo duomenys arba tokiu el. paštu registruotos paskyros nėra.";
+        String actualMessage = "";
+
+        BiofitusHomePage.clickOnLogInButton();
+        BiofitusHomePage.inputUserName(userEmail);
+        BiofitusHomePage.inputPassword(userPassword);
+        BiofitusHomePage.clickOnConfirmLogInButton();
+
+        actualMessage = BiofitusHomePage.readConfirmationMessageAfterInvalidLogin();
+
+        Assert.assertEquals(actualMessage, expectedMessage);
+
+    }
+
+
 }
 

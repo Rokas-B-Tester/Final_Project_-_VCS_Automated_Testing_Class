@@ -18,6 +18,8 @@ public class Locators {
 
             public static By submitLogInButton = By.xpath("//button[@id='submit-login']");
 
+            public static By listUserNotFound = By.xpath("//li[@class='alert alert-danger']");
+
         }
 
         public static class PersonalInfoPage{
