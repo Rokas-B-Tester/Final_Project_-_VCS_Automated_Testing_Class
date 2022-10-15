@@ -122,6 +122,25 @@ public class BiofitusHomePageTest extends TestBase {
         };
     }
 
+    @Test(dataProvider = "searchWithInvalidData", threadPoolSize = 5)
+    private void testSearchWithInvalidData(String searchKeyWord) {
+        String expectedMessage = "Rezultatų nerasta.";
+        String actualMessage = "";
+
+        BiofitusHomePage.inputInvalidSearchKeyWords(searchKeyWord);
+        BiofitusHomePage.clickOnSearchButton();
+        actualMessage = BiofitusHomePage.readSearchResultWarningMessage();
+
+        Assert.assertTrue(
+                actualMessage.contains(expectedMessage),
+                String.format(
+                        "Actual [%s]; Expected [%s]",
+                        actualMessage,
+                        expectedMessage
+                )
+        );
+    }
+
 
 }
 

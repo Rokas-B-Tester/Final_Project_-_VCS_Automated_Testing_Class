@@ -53,4 +53,12 @@ public class BiofitusHomePage {
     public static String readProductSearchResultHeadingMessage() {
         return Common.getElementText(Locators.Biofitus.SearchResultPage.paragraphOfSearchResults);
     }
+
+    public static void inputInvalidSearchKeyWords(String searchKeyWord) {
+        Common.sendKeysToElement(searchKeyWord,Locators.Biofitus.HomePage.searchBoxInput);
+    }
+
+    public static String readSearchResultWarningMessage() {
+        return Common.getElementText(Locators.Biofitus.SearchResultPage.nothingFoundInSearchWarning);
+    }
 }
