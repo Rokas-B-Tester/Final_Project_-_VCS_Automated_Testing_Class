@@ -33,4 +33,12 @@ public class BiofitusHomePage {
     public static String readConfirmationMessageAfterInvalidLogin() {
         return Common.getElementText(Locators.Biofitus.LogInPage.listUserNotFound);
     }
+
+    public static void clickOnLogOutButton() {
+        Common.clickElement(Locators.Biofitus.PersonalInfoPage.myLogOutButton);
+    }
+
+    public static String readTextOnLogInButtonAfterLogOut() {
+        return Common.getElementText(Locators.Biofitus.LogInPage.submitLogInButton);
+    }
 }

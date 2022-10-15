@@ -58,6 +58,29 @@ public class BiofitusHomePageTest extends TestBase {
 
     }
 
+    @Test(dataProvider = "logInWithValidData")
+    private void testLogOutFromAccount(String userEmail, String userPassword) {
+
+        String expectedLogInMessage = "Jūsų paskyra";
+        String actualLogInMessage = "";
+        String expectedLogOutMessage = "PRISIJUNGTI";
+        String actualLogOutMessage = "";
+
+        BiofitusHomePage.clickOnLogInButton();
+        BiofitusHomePage.inputUserName(userEmail);
+        BiofitusHomePage.inputPassword(userPassword);
+        BiofitusHomePage.clickOnConfirmLogInButton();
+        actualLogInMessage = BiofitusHomePage.readConfirmationMessageAfterSuccessfulLogin();
+
+        Assert.assertEquals(actualLogInMessage, expectedLogInMessage);
+
+        BiofitusHomePage.clickOnLogOutButton();
+        actualLogOutMessage = BiofitusHomePage.readTextOnLogInButtonAfterLogOut();
+
+        Assert.assertEquals(actualLogOutMessage, expectedLogOutMessage);
+
+    }
+
 
 }
 

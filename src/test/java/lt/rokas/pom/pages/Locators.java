@@ -23,9 +23,12 @@ public class Locators {
         }
 
         public static class PersonalInfoPage{
+
             public static By headerTextAfterSuccessfulLogin = By.xpath(
                     "//h1[contains(text(),'Jūsų paskyra')]"
             );
+
+            public static By myLogOutButton = By.xpath("//a[@class='btn btn-outline btn-tertiary']");
         }
 
     }
