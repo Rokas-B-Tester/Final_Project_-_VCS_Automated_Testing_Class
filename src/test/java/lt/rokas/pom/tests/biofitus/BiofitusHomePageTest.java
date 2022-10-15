@@ -43,7 +43,7 @@ public class BiofitusHomePageTest extends TestBase {
     @Test
     private void testLoginWithInvalidData() {
         String userEmail = "abcd@efg.com";
-        String userPassword = "6an2LeZ(m*4j8C5B";
+        String userPassword = "XcT)6weLK8d3Gg$v";
         String expectedMessage = "Neteisingi prisijungimo duomenys arba tokiu el. paštu registruotos paskyros nėra.";
         String actualMessage = "";
 
