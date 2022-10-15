@@ -111,6 +111,17 @@ public class BiofitusHomePageTest extends TestBase {
         );
     }
 
+    @DataProvider(name = "searchWithInvalidData", parallel = true)
+    public Object[][] invalidSearchKeywordsDataProvider() {
+        return new Object[][]{
+                {"Kotletas"},
+                {"abcdef"},
+                {"147852"},
+                {"Batonas"},
+                {"morka"}
+        };
+    }
+
 
 }
 
