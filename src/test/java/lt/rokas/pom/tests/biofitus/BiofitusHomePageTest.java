@@ -141,6 +141,18 @@ public class BiofitusHomePageTest extends TestBase {
         );
     }
 
+    @Test
+    private void testSearchWithEmptyInput() {
+        String expectedMessage = "Įveskite paieškos žodį.";
+        String actualMessage = "";
+
+        BiofitusHomePage.clickOnSearchButton();
+        actualMessage = BiofitusHomePage.readEmptySearchWarningMessage();
+
+        Assert.assertEquals(actualMessage, expectedMessage);
+
+    }
+
 
 }
 

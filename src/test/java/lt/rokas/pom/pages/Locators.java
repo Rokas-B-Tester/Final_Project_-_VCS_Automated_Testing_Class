@@ -40,6 +40,8 @@ public class Locators {
             public static By paragraphOfSearchResults = By.xpath("//p[@class='products-counter hidden-md-down']");
 
             public static By nothingFoundInSearchWarning = By.xpath("//p[@class='alert alert-warning']");
+
+            public static By emptySearchInputWarning = By.xpath("//*[@id='content-wrapper']/p");
         }
 
     }

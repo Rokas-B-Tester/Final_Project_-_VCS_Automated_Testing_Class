@@ -61,4 +61,8 @@ public class BiofitusHomePage {
     public static String readSearchResultWarningMessage() {
         return Common.getElementText(Locators.Biofitus.SearchResultPage.nothingFoundInSearchWarning);
     }
+
+    public static String readEmptySearchWarningMessage() {
+        return Common.getElementText(Locators.Biofitus.SearchResultPage.emptySearchInputWarning);
+    }
 }
