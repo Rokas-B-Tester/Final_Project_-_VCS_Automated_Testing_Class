@@ -1,6 +1,10 @@
 package lt.rokas.pom.pages;
 
 import lt.rokas.pom.utils.Driver;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import java.util.List;
 
 public class Common {
 
@@ -17,6 +21,28 @@ public class Common {
     public static void closeDriver() {
         Driver.close();
 
+    }
+
+    public static WebElement getElement(By locator){
+        return Driver.getDriver().findElement(locator);
+
+    }
+
+    public static List<WebElement> getElements(By locator){
+        return Driver.getDriver().findElements(locator);
+    }
+
+
+    public static void sendKeysToElement(String keys, By locator) {
+        getElement(locator).sendKeys(keys);
+    }
+
+    public static void clickElement(By locator) {
+        getElement(locator).click();
+    }
+
+    public static String getElementText(By locator) {
+        return getElement(locator).getText();
     }
 
 }
