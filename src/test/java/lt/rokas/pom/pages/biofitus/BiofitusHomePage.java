@@ -65,4 +65,17 @@ public class BiofitusHomePage {
     public static String readEmptySearchWarningMessage() {
         return Common.getElementText(Locators.Biofitus.SearchResultPage.emptySearchInputWarning);
     }
+
+    public static void clickOnNinthProductFromMainPage() {
+        Common.clickElement(Locators.Biofitus.HomePage.homePageNinthDefaultProduct);
+    }
+
+    public static void clickOnAddProductToWishList() {
+        Common.clickElement(Locators.Biofitus.ProductPage.buttonAddToWishList);
+    }
+
+    public static String readMessageFromAPopUpModal() {
+        Common.waitForElementWithVisibilityChange(Locators.Biofitus.ProductPage.popUpMessageInModalWindow);
+        return Common.getElementText(Locators.Biofitus.ProductPage.popUpMessageInModalWindow);
+    }
 }

@@ -150,8 +150,21 @@ public class BiofitusHomePageTest extends TestBase {
         actualMessage = BiofitusHomePage.readEmptySearchWarningMessage();
 
         Assert.assertEquals(actualMessage, expectedMessage);
-
     }
+
+    @Test
+    private void testAddingProductToWishListWithOutLoggingIn() {
+        String expectedMessage = "You must be logged in to manage your wishlist";
+        String actualMessage = "";
+
+        BiofitusHomePage.clickOnNinthProductFromMainPage();
+        BiofitusHomePage.clickOnAddProductToWishList();
+        actualMessage = BiofitusHomePage.readMessageFromAPopUpModal();
+
+        Assert.assertEquals(actualMessage, expectedMessage);
+    }
+
+
 
 
 }
