@@ -81,6 +81,17 @@ public class BiofitusHomePageTest extends TestBase {
 
     }
 
+    @DataProvider(name = "searchWithValidData", parallel = true)
+    public Object[][] validSearchKeywordsDataProvider() {
+        return new Object[][]{
+                {"Kalis"},
+                {"Magnis"},
+                {"Cinkas"},
+                {"Selenas"},
+                {"Kolagenas"}
+        };
+    }
+
 
 }
 
