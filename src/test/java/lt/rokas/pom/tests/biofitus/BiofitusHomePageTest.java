@@ -92,6 +92,25 @@ public class BiofitusHomePageTest extends TestBase {
         };
     }
 
+    @Test(dataProvider = "searchWithValidData", threadPoolSize = 5)
+    private void testSearchWithValidData(String searchKeyWord) {
+        String expectedMessage = "Rasta";
+        String actualMessage = "";
+
+        BiofitusHomePage.inputSearchKeyWords(searchKeyWord);
+        BiofitusHomePage.clickOnSearchButton();
+        actualMessage = BiofitusHomePage.readProductSearchResultHeadingMessage();
+
+        Assert.assertTrue(
+                actualMessage.contains(expectedMessage),
+                String.format(
+                        "Actual [%s]; Expected [%s]",
+                        actualMessage,
+                        expectedMessage
+                )
+        );
+    }
+
 
 }
 

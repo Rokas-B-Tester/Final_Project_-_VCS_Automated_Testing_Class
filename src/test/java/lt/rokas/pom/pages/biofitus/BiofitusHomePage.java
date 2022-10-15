@@ -41,4 +41,16 @@ public class BiofitusHomePage {
     public static String readTextOnLogInButtonAfterLogOut() {
         return Common.getElementText(Locators.Biofitus.LogInPage.submitLogInButton);
     }
+
+    public static void inputSearchKeyWords(String searchKeyWord) {
+        Common.sendKeysToElement(searchKeyWord,Locators.Biofitus.HomePage.searchBoxInput);
+    }
+
+    public static void clickOnSearchButton() {
+        Common.clickElement(Locators.Biofitus.HomePage.startSearchButton);
+    }
+
+    public static String readProductSearchResultHeadingMessage() {
+        return Common.getElementText(Locators.Biofitus.SearchResultPage.paragraphOfSearchResults);
+    }
 }
