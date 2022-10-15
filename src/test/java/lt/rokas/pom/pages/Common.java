@@ -2,7 +2,9 @@ package lt.rokas.pom.pages;
 
 import lt.rokas.pom.utils.Driver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -49,8 +51,16 @@ public class Common {
     }
 
     public static void waitForElementWithVisibilityChange(By locator) {
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(2));
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(3));
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
+
+    public static void pressEscKeyByAction(By locator) {
+        WebElement element = getElement(locator);
+        Actions action = new Actions(Driver.getDriver());
+        action.moveToElement(element);
+        action.sendKeys(Keys.ESCAPE);
+        action.perform();
     }
 
 }

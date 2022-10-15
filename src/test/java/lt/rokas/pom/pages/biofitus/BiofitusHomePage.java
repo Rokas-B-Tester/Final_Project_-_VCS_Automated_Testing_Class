@@ -75,7 +75,31 @@ public class BiofitusHomePage {
     }
 
     public static String readMessageFromAPopUpModal() {
+
         Common.waitForElementWithVisibilityChange(Locators.Biofitus.ProductPage.popUpMessageInModalWindow);
+
         return Common.getElementText(Locators.Biofitus.ProductPage.popUpMessageInModalWindow);
+    }
+
+    public static void clickOnHomePageIcon() {
+        Common.clickElement(Locators.Biofitus.PersonalInfoPage.homePageLogo);
+    }
+
+    public static void clickOnSixthProductFromMainPage() {
+        Common.clickElement(Locators.Biofitus.HomePage.homePageSixthDefaultProduct);
+    }
+
+    public static void closePopUpModalWindow() {
+
+        Common.waitForElementWithVisibilityChange(Locators.Biofitus.ProductPage.popUpMessageInModalWindow);
+
+        Common.pressEscKeyByAction(Locators.Biofitus.ProductPage.popUpMessageInModalWindow);
+    }
+
+    public static String readQuantityOfWishList() {
+
+        Common.waitForElementWithVisibilityChange(Locators.Biofitus.ProductPage.quantityInWishlist);
+
+        return Common.getElementText(Locators.Biofitus.ProductPage.quantityInWishlist);
     }
 }

@@ -164,8 +164,24 @@ public class BiofitusHomePageTest extends TestBase {
         Assert.assertEquals(actualMessage, expectedMessage);
     }
 
+    @Test(dataProvider = "logInWithValidData")
+    private void testAddingProductToWishListWhileLoggedIn(String userEmail, String userPassword) {
+        String expectedMessage = "1";
+        String actualMessage = "";
 
+        BiofitusHomePage.clickOnLogInButton();
+        BiofitusHomePage.inputUserName(userEmail);
+        BiofitusHomePage.inputPassword(userPassword);
+        BiofitusHomePage.clickOnConfirmLogInButton();
+        BiofitusHomePage.clickOnHomePageIcon();
+        BiofitusHomePage.clickOnSixthProductFromMainPage();
+        BiofitusHomePage.clickOnAddProductToWishList();
+        BiofitusHomePage.closePopUpModalWindow();
+        actualMessage = BiofitusHomePage.readQuantityOfWishList();
+        BiofitusHomePage.clickOnAddProductToWishList();
 
+        Assert.assertEquals(actualMessage, expectedMessage);
+    }
 
 }
 

@@ -13,7 +13,13 @@ public class Locators {
 
             public static By startSearchButton = By.xpath("//button[@id='leo_search_top_button']");
 
-            public static By homePageNinthDefaultProduct = By.xpath("(//a[contains(@class,'thumbnail product-thumbnail')])[9]");
+            public static By homePageNinthDefaultProduct = By.xpath(
+                    "(//a[contains(@class,'thumbnail product-thumbnail')])[9]"
+            );
+
+            public static By homePageSixthDefaultProduct = By.xpath(
+                    "(//a[contains(@class,'thumbnail product-thumbnail')])[6]"
+            );
         }
 
         public static class LogInPage{
@@ -35,6 +41,8 @@ public class Locators {
             );
 
             public static By myLogOutButton = By.xpath("//a[@class='btn btn-outline btn-tertiary']");
+
+            public static By homePageLogo = By.xpath("//a[@class='logo']");
         }
 
         public static class SearchResultPage{
@@ -51,6 +59,8 @@ public class Locators {
             public static By buttonAddToWishList = By.xpath("//span[contains(text(),'Įsiminti prekę')]");
 
             public static By popUpMessageInModalWindow = By.xpath("//h5[@class='modal-title text-xs-center']");
+
+            public static By quantityInWishlist = By.xpath("(//span[@class='ap-total-wishlist ap-total'])[2]");
         }
 
     }
