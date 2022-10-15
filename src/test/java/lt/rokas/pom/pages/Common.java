@@ -33,11 +33,6 @@ public class Common {
 
     }
 
-    public static List<WebElement> getElements(By locator){
-        return Driver.getDriver().findElements(locator);
-    }
-
-
     public static void sendKeysToElement(String keys, By locator) {
         getElement(locator).sendKeys(keys);
     }

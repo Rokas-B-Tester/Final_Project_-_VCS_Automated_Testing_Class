@@ -20,6 +20,10 @@ public class Locators {
             public static By homePageSixthDefaultProduct = By.xpath(
                     "(//a[contains(@class,'thumbnail product-thumbnail')])[6]"
             );
+
+            public static By homePageTenthDefaultProduct = By.xpath(
+                    "(//a[contains(@class,'thumbnail product-thumbnail')])[10]"
+            );
         }
 
         public static class LogInPage{
@@ -47,7 +51,9 @@ public class Locators {
 
         public static class SearchResultPage{
 
-            public static By paragraphOfSearchResults = By.xpath("//p[@class='products-counter hidden-md-down']");
+            public static By paragraphOfSearchResults = By.xpath(
+                    "//p[@class='products-counter hidden-md-down']"
+            );
 
             public static By nothingFoundInSearchWarning = By.xpath("//p[@class='alert alert-warning']");
 
@@ -58,9 +64,20 @@ public class Locators {
 
             public static By buttonAddToWishList = By.xpath("//span[contains(text(),'Įsiminti prekę')]");
 
-            public static By popUpMessageInModalWindow = By.xpath("//h5[@class='modal-title text-xs-center']");
+            public static By popUpMessageInModalWindow = By.xpath(
+                    "//h5[@class='modal-title text-xs-center']"
+            );
 
-            public static By quantityInWishlist = By.xpath("(//span[@class='ap-total-wishlist ap-total'])[2]");
+            public static By quantityInWishlist = By.xpath(
+                    "(//span[@class='ap-total-wishlist ap-total'])[2]"
+            );
+
+            public static By increaseQuantityByOneButton = By.xpath(
+                    "//i[@class='material-icons touchspin-up']"
+            );
+
+            public static By addToCartButton = By.xpath("//button[@class='btn btn-primary add-to-cart']");
+            public static By successfulAddToCartModalWindowMessage = By.xpath("//h4[@id='myModalLabel']");
         }
 
     }

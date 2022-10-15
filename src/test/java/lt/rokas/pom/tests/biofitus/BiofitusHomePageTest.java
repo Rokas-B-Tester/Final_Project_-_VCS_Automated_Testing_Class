@@ -183,5 +183,18 @@ public class BiofitusHomePageTest extends TestBase {
         Assert.assertEquals(actualMessage, expectedMessage);
     }
 
+    @Test
+    private void testAddProductToCart(){
+        String expectedMessage = "Prekė sėkmingai pridėta į krepšelį";
+        String actualMessage = "";
+
+        BiofitusHomePage.clickOnTenthProductFromMainPage();
+        BiofitusHomePage.clickOnIncreaseProductCountByOne();
+        BiofitusHomePage.clickOnAddToCartButton();
+        actualMessage = BiofitusHomePage.readProductsAddedToCartModalWindow();
+
+        Assert.assertTrue(actualMessage.contains(expectedMessage));
+    }
+
 }
 

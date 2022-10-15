@@ -102,4 +102,23 @@ public class BiofitusHomePage {
 
         return Common.getElementText(Locators.Biofitus.ProductPage.quantityInWishlist);
     }
+
+    public static void clickOnTenthProductFromMainPage() {
+        Common.clickElement(Locators.Biofitus.HomePage.homePageTenthDefaultProduct);
+    }
+
+    public static void clickOnIncreaseProductCountByOne() {
+        Common.clickElement(Locators.Biofitus.ProductPage.increaseQuantityByOneButton);
+    }
+
+    public static void clickOnAddToCartButton() {
+        Common.clickElement(Locators.Biofitus.ProductPage.addToCartButton);
+    }
+
+    public static String readProductsAddedToCartModalWindow() {
+
+        Common.waitForElementWithVisibilityChange(Locators.Biofitus.ProductPage.successfulAddToCartModalWindowMessage);
+
+        return Common.getElementText(Locators.Biofitus.ProductPage.successfulAddToCartModalWindowMessage);
+    }
 }
